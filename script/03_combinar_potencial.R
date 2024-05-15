@@ -4,13 +4,13 @@ data <- read_rds('data/processed/data.rds')
 
 write_rds(data,'data/processed/data_satelital.rds')
 
-data_x <- data |> 
-  filter(temporada == '2022-2023',
-         sitio == 'la_esperanza',
-         tratamiento == 'T1') |> 
-  mutate(fecha = as.Date(fecha),
-         dias = as.numeric(fecha - min(fecha))) |> 
-  select(dias,ndmi)
+# data_x <- data |> 
+#   filter(temporada == '2022-2023',
+#          sitio == 'la_esperanza',
+#          tratamiento == 'T1') |> 
+#   mutate(fecha = as.Date(fecha),
+#          dias = as.numeric(fecha - min(fecha))) |> 
+#   select(dias,ndmi)
 
 data |> 
   filter(temporada == '2022-2023') |> 
